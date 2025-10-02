@@ -1,7 +1,5 @@
 import { Image } from 'expo-image';
 import { Platform, StyleSheet,TouchableOpacity,View,Text , ScrollView} from 'react-native';
-
-
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
@@ -18,17 +16,31 @@ export default function HomeScreen() {
           </ThemedText>
 
           <TouchableOpacity
-            style={{ backgroundColor: BrandColors.secondary, padding: 12, borderRadius: 8 }}
-            className='w-32 items-center self-center'
+            className='w-32 items-center self-center px-4 py-4 rounded-2xl bg-accent'
           >
             <ThemedText>Sign UP</ThemedText>
           </TouchableOpacity>
         </View>
 
-        <View style={{  alignItems: 'center', justifyContent: 'center' }}>
-          <ThemedText className="text-3xl font-bold text-blue-500">
+        <View >
+          <ThemedText className="text-3xl font-bold self-center">
             Welcome to Nativewind!
           </ThemedText>
+          <Link 
+          className='items-center self-center'
+          href="./Onboarding">
+         <ThemedText> Onboarding</ThemedText> 
+          </Link>
+          <Link 
+          className='items-center self-center'
+          href="./movies/avengers">
+         <ThemedText> Avengers Movie</ThemedText> 
+          </Link>
+          <Link 
+          className='items-center self-center'
+          href="./movies/iron-man">
+         <ThemedText> iron-man Movie</ThemedText> 
+          </Link>
         </View>
       </ScrollView>
     </ThemedView>
