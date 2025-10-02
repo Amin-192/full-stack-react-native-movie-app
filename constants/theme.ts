@@ -9,8 +9,8 @@ const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
 export const BrandColors = {
-  primary: '#0a7ea4',      // Your main brand color
-  secondary: '#fec04ee8',    // Secondary brand color
+ primary: '#1E3A5F',      // Deep royal navy
+ secondary: '#C9A961',    // Champagne gold
   accent: '#f7b147ff',       // Accent color
   danger: '#dc2626',       // Red for errors/delete
   success: '#16a34a',      // Green for success
@@ -30,7 +30,7 @@ export const Colors = {
   },
   dark: {
     text: '#ECEDEE',
-    background: '#151718',
+    background: '#000000',  // ← Pure black
     tint: tintColorDark,
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
