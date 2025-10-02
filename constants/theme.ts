@@ -8,6 +8,17 @@ import { Platform } from 'react-native';
 const tintColorLight = '#0a7ea4';
 const tintColorDark = '#fff';
 
+export const BrandColors = {
+  primary: '#0a7ea4',      // Your main brand color
+  secondary: '#fec04ee8',    // Secondary brand color
+  accent: '#f7b147ff',       // Accent color
+  danger: '#dc2626',       // Red for errors/delete
+  success: '#16a34a',      // Green for success
+  warning: '#f59e0b',      // Orange for warnings
+  black: '#000000',        // Pure black (logos, etc)
+  white: '#FFFFFF',        // Pure white
+};
+
 export const Colors = {
   light: {
     text: '#11181C',
