@@ -1,28 +1,35 @@
 import { Tabs } from "expo-router";
-import { ImageBackground, Image, View } from "react-native";
+import { Image, View } from "react-native";
 import { icons } from "@/constants/icons";
-import { images } from "@/constants/images";
 import { ThemedText } from "@/components/themed-text";
 import { Colors } from "@/constants/theme";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 
 function TabIcon({ focused, icon, title }: any) {
-  if (focused) {
-    return (
-      <ImageBackground
-        source={images.highlight}
-        className="flex flex-row w-full flex-1 min-w-[112px] min-h-14 mt-4 justify-center items-center rounded-full overflow-hidden"
-      >
-        <Image source={icon} tintColor="#151312" className="size-5" />
-        <ThemedText className="text-base font-semibold ml-2">
+  return (
+    <View 
+      className="flex flex-row items-center justify-center 
+      rounded-full"
+      style={{
+        backgroundColor: focused ? '#8B7FD8' : 'transparent',  // Light purple
+        minWidth: focused ? 112 : 60,
+        minHeight: 56,
+        paddingHorizontal: 16,
+      }}
+    >
+      <Image 
+        source={icon} 
+        tintColor={focused ? "#151312" : "#A8B5DB"} 
+        style={{ width: 20, height: 20 }}
+      />
+      {focused && (
+        <ThemedText 
+          className="font-semibold ml-2"
+          style={{ color: '#151312', fontSize: 16 }}
+        >
           {title}
         </ThemedText>
-      </ImageBackground>
-    );
-  }
-  return (
-    <View className="size-full justify-center items-center mt-4 rounded-full">
-      <Image source={icon} tintColor="#A8B5DB" className="size-5" />
+      )}
     </View>
   );
 }
@@ -43,7 +50,10 @@ export default function TabsLayout() {
         tabBarStyle: {
           backgroundColor: Colors[colorScheme ?? 'light'].background,
           borderTopColor: Colors[colorScheme ?? 'light'].background,
-          height: 60,
+          height: 70,
+          borderRadius: 50,
+          marginHorizontal: 20,
+          
           paddingBottom: 8,
           paddingTop: 8,
           position: "absolute",
